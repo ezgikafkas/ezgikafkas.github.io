@@ -2,68 +2,132 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ezgi Kafkas — Product Designer portfolyosu">
   <title>Ezgi Kafkas | Product Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="refinements.css">
 </head>
 <body>
-  <a class="skip" href="#projects">İçeriğe geç</a>
-  <header class="hero" id="top">
+  <a class="skip" href="#content">İçeriğe geç</a>
+
+  <header class="hero">
     <div class="hero-copy">
-      <h1>Her ürünün<br>anlatacak bir<br>hikâyesi vardır.<span>✦</span></h1>
-      <p>Merhaba, ben Ezgi Kafkas. B2B SaaS ürünleri için kullanıcı deneyimi, arayüz tasarımı ve ürün iletişimini bir araya getiren bir Product Designer’ım. Tasarım sürecini yalnızca ekran üretmek olarak değil; kullanıcı ihtiyaçlarını, iş hedeflerini ve marka deneyimini tek bir bütün olarak ele alıyorum.</p>
-      <nav class="hero-actions" aria-label="Sayfa bölümleri">
-        <a class="button primary" href="#projects">Örnek Vaka Çalışmalarım</a>
-        <a class="button" href="#story">Hikayem</a>
-        <a class="button" href="#contact">İletişime Geçelim</a>
+      <h1>Her ürünün<br>anlatacak bir<br>hikâyesi vardır.</h1>
+      <p>Merhaba, ben en Ezgi Kafkas. B2B SaaS ürünleri için kullanıcı deneyimi, arayüz tasarımı ve ürün iletişimini bir araya getiren bir Product Designer’ım. Tasarım sürecini yalnızca ekran üretmek olarak değil; kullanıcı ihtiyaçlarını, iş hedeflerini ve marka deneyimini tek bir bütün olarak ele alıyorum.</p>
+      <nav class="hero-actions" aria-label="Portfolyo bölümleri">
+        <button class="hero-button active" data-view="projects">Örnek Vaka Çalışmalarım</button>
+        <button class="hero-button" data-view="story">Hikayem</button>
+        <button class="hero-button" data-view="contact">İletişime Geçelim</button>
       </nav>
     </div>
-    <div class="portrait" aria-label="Ezgi Kafkas portresi">
-      <div class="portrait-bg"></div><img src="ezgi.png" alt="Ezgi Kafkas">
-      <span class="role r1">▣ Product Designer</span><span class="role r2">▣ Graphic Designer</span>
-      <span class="role r3">▣ UX UI Designer</span><span class="role r4">▣ Influencer</span><i>✦</i>
-    </div>
+    <div class="hero-visual"><img src="hero-art.png" alt="Ezgi Kafkas; Product Designer, Graphic Designer, UX UI Designer ve Influencer"></div>
   </header>
 
-  <main>
-    <section class="projects" id="projects">
-      <div class="section-intro">
+  <main id="content">
+    <section class="view projects-view active" id="projects" data-view-panel="projects">
+      <div class="section-copy">
         <h2>Örnek Vaka Çalışmalarım</h2>
         <strong>Nasıl Çalışıyorum?</strong>
-        <p>Her projeye kullanıcı problemi ve iş hedefini anlamakla başlıyorum. Mevcut deneyimi analiz ediyor, bilgi mimarisini oluşturuyor ve kullanıcı akışlarını sadeleştiriyorum. Ardından arayüz tasarımı, mikro metinler ve ürün iletişimiyle deneyimi bütünsel olarak tamamlıyorum.</p>
+        <p>Her projeye kullanıcı problemi ve iş hedefini anlamakla başlıyorum. Mevcut deneyimi analiz ediyor, bilgi mimarisini oluşturuyor ve kullanıcı akışlarını sadeleştiriyorum. Ardından arayüz tasarımı, mikro metinler ve ürün iletişimiyle deneyimi bütünsel olarak tamamlıyorum. Tasarım kararlarımı yalnızca estetik kaygılarla değil; kullanılabilirlik, ürün hedefleri ve kullanıcı ihtiyaçları doğrultusunda şekillendiriyorum.</p>
+        <p>Aşağıdaki çalışmalar, üzerinde aktif olarak görev aldığım ürünlerden seçilmiş örneklerdir. Her proje; kullanıcı problemi, tasarım yaklaşımı ve geliştirdiğim çözümü özetleyen kısa vaka çalışmaları şeklinde sunulmuştur.</p>
         <div class="tags"><span>Product Design</span><span>Marketing Design</span><span>Graphic Design</span><span>UX Research</span><span>UI Design</span></div>
       </div>
-      <div class="tabs" role="tablist" aria-label="Çalışma kategorileri">
-        <button class="tab active" role="tab" aria-selected="true" data-target="product-panel">Product Design Çalışmalar</button>
-        <button class="tab" role="tab" aria-selected="false" data-target="creative-panel">Kreatif Çalışmalar</button>
+
+      <div class="tabs" role="tablist">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="product">Product Design Çalışmalar</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="creative">Kreatif Çalışmalar</button>
       </div>
-      <div id="product-panel" class="panel active" role="tabpanel">
-        <article class="case case-lime" id="perfx">
-          <div class="case-copy"><h3>Perfx Web Site</h3><p>Web sitesinin yeniden tasarım sürecini inceleyebileceğiniz, kullanıcı deneyimi gözlemleri ve dönüşüm odaklı çözümleri içeren çalışma.</p><div class="case-nav" data-case="perfx"><button class="active">Ürün Hakkında <small>Perfx hakkında kısa bilgilendirme.</small></button><button>Problemler <small>Web sitesinde karşılaşılan temel problemler.</small></button><button>Geliştirilen Çözümler <small>Problemlere geliştirilen tasarım çözümleri.</small></button><button>Ekipler Arası İş Birliği <small>Projeyi geliştirirken temas edilen ekipler.</small></button></div></div>
-          <div class="case-detail"><div class="chips"><span>AI Experience</span><span>Design System</span><span>Product Design</span><span>UX/UI Design</span><span>B2B SaaS</span></div><h4>Ürün Hakkında</h4><p>Perfx; çalışan hedefleri, performans değerlendirmeleri, geri bildirim ve gelişim planlarını tek platformda bir araya getiren organizasyonel performans ürünüdür.</p><img src="perfx-dashboard.png" alt="Perfx ürün arayüzü"></div>
+
+      <div class="work-panel active" data-work-panel="product">
+        <article class="case-card" data-case="perfx">
+          <div class="case-menu">
+            <h3>Perfx Web Site</h3>
+            <p>Bu vaka çalışmasında, Perfx web sitesinin yeniden tasarım sürecini inceleyebilirsiniz. Kullanıcı deneyimi gözlemlerini, ürün değerini daha net anlatmak ve modern bir B2B SaaS deneyimi oluşturmak için izlediğim tasarım yaklaşımını, bilgi mimarisi kararlarını ve arayüz çıktılarını paylaşıyorum.</p>
+            <div class="state-list">
+              <button class="active" data-state="1"><b>Ürün Hakkında</b><small>Perfx, hakkında kısa bilgilendirme.</small><i>→</i></button>
+              <button data-state="2"><b>Problemler</b><small>Website'de karşılaşılan temel problemler</small><i>→</i></button>
+              <button data-state="3"><b>Geliştirilen Çözümler</b><small>Problemlere geliştirilen tasarım çözümleri</small><i>→</i></button>
+              <button data-state="4"><b>Ekipler Arası İş Birliği</b><small>Projeyi geliştirirken temas edilen ekipler.</small><i>→</i></button>
+            </div>
+          </div>
+          <div class="case-image"><img src="states-perfx-1.png" alt="Perfx vaka çalışması"></div>
         </article>
-        <article class="case case-blue" id="pratispro">
-          <div class="case-copy"><h3>PratisPro Ürün Geliştirme</h3><p>Risk ve maliyet odaklı satın alma platformunun uçtan uca kullanıcı deneyimi ve ürün geliştirme süreci.</p><a class="case-link" href="#pratispro-detail">Vaka çalışmasını incele →</a></div>
-          <div class="case-detail" id="pratispro-detail"><h4>Ürün Hakkında</h4><p>PratisPro, kurumların satın alma operasyonlarını uçtan uca dijitalleştiren; tedarikçi, teklif ve kategori yönetimini tek platformda buluşturan kurumsal bir B2B SaaS ürünüdür.</p><img src="pratispro.png" alt="PratisPro dashboard ekranı"></div>
+
+        <article class="case-card" data-case="pratis">
+          <div class="case-menu">
+            <h3>PratisPro Ürün Geliştirme</h3>
+            <p>Bu vaka çalışmasında, PratisPro’nun kullanıcı deneyimini geliştirmek amacıyla yürüttüğüm ürün geliştirme sürecini paylaşıyorum. Araştırma aşamasından tasarım kararlarına, ekipler arası iş birliklerinden yayına alma sürecine kadar ilerlediğim yaklaşımı adım adım inceleyebilirsiniz.</p>
+            <div class="state-list">
+              <button class="active" data-state="1"><b>Ürün Hakkında</b><small>PratisPro, hakkında kısa bilgilendirme.</small><i>→</i></button>
+              <button data-state="2"><b>Problemler</b><small>Ürün içinde yapılan vaka çalışmasında karşılaşılan problemler</small><i>→</i></button>
+              <button data-state="3"><b>Geliştirilen Çözümler</b><small>Problemlere geliştirilen tasarım çözümleri</small><i>→</i></button>
+              <button data-state="4"><b>Ekipler Arası İş Birliği</b><small>Projeyi geliştirirken temas edilen ekipler.</small><i>→</i></button>
+            </div>
+          </div>
+          <div class="case-image"><img src="states-pratis-1.png" alt="PratisPro vaka çalışması"></div>
         </article>
-        <article class="case case-purple" id="thanxie">
-          <div class="case-copy"><h3>Thanxie Ürün Geliştirme</h3><p>Çalışan deneyimi ve bağlılığını güçlendiren sosyal platform için kullanıcı odaklı ürün geliştirme çalışması.</p><a class="case-link" href="#thanxie-detail">Vaka çalışmasını incele →</a></div>
-          <div class="case-detail" id="thanxie-detail"><h4>Ürün Hakkında</h4><p>Thanxie; çalışanların takdir, ödül ve duyurularla birbirine bağlandığı, şirket kültürünü dijital ortamda görünür kılan bir çalışan deneyimi platformudur.</p><img src="thanxie.png" alt="Thanxie mobil uygulama ekranları"></div>
+
+        <article class="case-card" data-case="thanxie">
+          <div class="case-menu">
+            <h3>Thanxie Ürün Geliştirme</h3>
+            <p>Thanxie’nin sosyal deneyimini zenginleştirmek amacıyla tasarladığım Story ve Nişan Akışları kullanıcıların onaylamadan ürün mimarisine, kullanıcı akışlarından etkileşim detaylarına kadar uzanan geliştirme sürecini bu vaka çalışmasında paylaşıyorum.</p>
+            <div class="state-list">
+              <button class="active" data-state="1"><b>Ürün Hakkında</b><small>Thanxie, hakkında kısa bilgilendirme.</small><i>→</i></button>
+              <button data-state="2"><b>Problemler &amp; Geliştirilen Çözümler</b><small>Websitede karşılaşılan temel problemler ve geliştirilen tasarım çözümleri</small><i>→</i></button>
+              <button data-state="4"><b>Ekipler Arası İş Birliği</b><small>Projeyi geliştirirken temas edilen ekipler.</small><i>→</i></button>
+            </div>
+          </div>
+          <div class="case-image"><img src="states-thanxie-1.png" alt="Thanxie vaka çalışması"></div>
         </article>
       </div>
-      <div id="creative-panel" class="panel" role="tabpanel" hidden>
-        <article class="creative-card"><div><h3>Grafik Tasarım &amp; Marketing</h3><p>Ürünlerin pazara sunulma süreçlerinde Product Marketing Design tarafında; ürün hikâyesini hedef kitleye doğru şekilde aktaran kampanya, mailing, landing page ve dijital reklam kreatifleri ürettim.</p><div class="creative-menu"><button data-creative="LinkedIn & Meta Post Örnekleri">LinkedIn &amp; Meta Post Örnekleri →</button><button data-creative="Mailing Örnekleri">Mailing Örnekleri →</button><button data-creative="Welcome Setler">Welcome Setler →</button><button data-creative="Banner & Popuplar">Banner &amp; Popuplar →</button><button data-creative="Broşür Örnekleri">Broşür Örnekleri →</button><button data-creative="Logo Tasarımları">Logo Tasarımları →</button></div></div><img src="creative-works.png" alt="Kreatif çalışma örnekleri"></article>
+
+      <div class="work-panel" data-work-panel="creative" hidden>
+        <article class="creative-card">
+          <div class="creative-menu">
+            <h3>Grafik Tasarım &amp; Marketing</h3>
+            <p>Ürünlerin pazara sunulma süreçlerinde Product Marketing Design tarafında aktif rol alarak, ürün hikâyesini hedef kitleye en doğru şekilde aktaran deneyimler tasarladım. Değer önerilerinin oluşturulması, lansman kampanyaları, satış sunumları, mailing, landing page ve dijital reklam kreatifleri gibi farklı temas noktalarında ürün, pazarlama ve satış ekipleriyle birlikte çalışarak tutarlı ve etkili bir marka iletişimi oluşturdum.</p>
+            <div class="state-list creative-list">
+              <button class="active" data-creative-state="1"><b>LinkedIn &amp; Meta Post Örnekleri</b><i>→</i></button>
+              <button data-creative-state="2"><b>Mailing Örnekleri</b><i>→</i></button>
+              <button data-creative-state="3"><b>Welcome Setler</b><i>→</i></button>
+              <button data-creative-state="4"><b>Banner &amp; Popuplar</b><i>→</i></button>
+              <button data-creative-state="5"><b>Broşür Örnekleri</b><i>→</i></button>
+              <button data-creative-state="6"><b>Logo Tasarımları</b><i>→</i></button>
+            </div>
+          </div>
+          <div class="creative-image"><img src="states-creative-1.png" alt="Kreatif çalışma örnekleri"></div>
+        </article>
       </div>
     </section>
 
-    <section class="story" id="story"><div><p class="eyebrow">Hikayem</p><h2>Tasarım, iş ve insan arasında bağ kuruyorum.</h2></div><p>B2B SaaS dünyasında ürün tasarımını yalnızca estetik bir çıktı değil, ölçülebilir bir iş sonucu ve anlaşılır bir kullanıcı deneyimi olarak ele alıyorum. Araştırma, ürün stratejisi, arayüz ve iletişim tasarımını aynı hikâyenin parçaları olarak birleştiriyorum.</p></section>
-    <section class="contact" id="contact"><h2>İletişim</h2><p>Yeni bir ürün, ekip ya da yaratıcı fikir üzerine konuşalım.</p><div class="socials"><a href="mailto:ezgi.kafkas@gmail.com" aria-label="E-posta">✉</a><a href="https://www.behance.net/" target="_blank" rel="noreferrer" aria-label="Behance">Bē</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a><a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">◎</a></div></section>
+    <section class="view story-view" id="story" data-view-panel="story" hidden>
+      <h2>Hikayem</h2>
+      <p>Tasarım benim için hiçbir zaman yalnızca estetik üretmek olmadı. Yeditepe Üniversitesi Grafik Tasarım bölümü ile başlayan kariyer yolculuğum, zamanla kullanıcı davranışlarını anlamaya, dijital ürünler geliştirmeye ve tasarımın iş hedefleri üzerindeki etkisini keşfetmeye dönüştü.</p>
+      <p>Bugün Product Designer olarak kurumsal B2B SaaS ürünleri üzerinde çalışıyorum. Kullanıcı deneyimi tasarımından ürün arayüzlerine, satış sunumlarından ürün iletişimine kadar tasarımın farklı disiplinlerini tek bir ürün dili altında birleştiriyorum. SabancıDx bünyesinde İnsan Kaynakları teknolojileri başta olmak üzere farklı dijital ürünlerin deneyim tasarımını ve görsel iletişim süreçlerinde aktif rol alıyorum. Amacım yalnızca estetik arayüzler tasarlamak değil; kullanıcıların daha hızlı karar verebildiği, ekiplerin daha verimli çalıştığı ve ürünlerin daha güçlü anlatıldığı deneyimler oluşturmak.</p>
+      <div class="stats">
+        <div><b>5+</b><span>Yıl Grafik Tasarım<br>Deneyimi</span></div>
+        <div><b>3+</b><span>Yıl Product Design<br>Deneyimi</span></div>
+        <div><b>8+</b><span>B2B SaaS<br>Ürünü</span></div>
+        <div><b>100+</b><span>Marketing &amp; Product<br>Assets</span></div>
+        <div><b>6+</b><span>Çapraz<br>Çözümler</span></div>
+      </div>
+    </section>
+
+    <section class="view contact-view" id="contact" data-view-panel="contact" hidden>
+      <h2>İletişim</h2>
+      <div class="socials">
+        <a href="tel:+900000000000" aria-label="Telefon">▯</a>
+        <a href="mailto:ezgi.kafkas@gmail.com" aria-label="E-posta">✉</a>
+        <a href="https://www.behance.net/" target="_blank" rel="noreferrer" aria-label="Behance">Bē</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">◎</a>
+      </div>
+    </section>
   </main>
-  <footer><span>© <span id="year"></span> Ezgi Kafkas</span><a href="#top">Yukarı dön ↑</a></footer>
   <script src="script.js"></script>
 </body>
 </html>

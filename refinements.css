@@ -1,0 +1,7 @@
+@media (min-width: 1101px) {
+  .hero-visual {
+    left: 50%;
+    right: auto;
+    width: 660px;
+  }
+}

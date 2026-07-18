@@ -1,11 +1,42 @@
-const tabs=document.querySelectorAll('.tab');
-tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false')});document.querySelectorAll('.panel').forEach(p=>{p.classList.remove('active');p.hidden=true});tab.classList.add('active');tab.setAttribute('aria-selected','true');const panel=document.getElementById(tab.dataset.target);panel.hidden=false;panel.classList.add('active')}));
-const perfxContent=[
-  ['Ürün Hakkında','Perfx; çalışan hedefleri, performans değerlendirmeleri, geri bildirim ve gelişim planlarını tek platformda bir araya getiren organizasyonel performans ürünüdür.','perfx-dashboard.png'],
-  ['Problemler','Mevcut deneyimde dağınık bilgi mimarisi, yoğun içerik hiyerarşisi ve kullanıcıların aradıkları aksiyona ulaşmasını zorlaştıran akışlar belirlendi.','perfx-detail.png'],
-  ['Geliştirilen Çözümler','Kullanıcı yolculukları sadeleştirildi; ürün değer önerisi görünür kılındı ve tasarım sistemiyle tutarlı, dönüşüm odaklı sayfa yapıları geliştirildi.','perfx-detail.png'],
-  ['Ekipler Arası İş Birliği','Ürün, pazarlama ve yazılım ekipleriyle ortak hedefler üzerinden çalışılarak tasarım kararlarının hem kullanıcı hem iş ihtiyaçlarını karşılaması sağlandı.','perfx-dashboard.png']
-];
-document.querySelectorAll('.case-nav button').forEach((button,index)=>button.addEventListener('click',()=>{const nav=button.parentElement;nav.querySelectorAll('button').forEach(b=>b.classList.remove('active'));button.classList.add('active');const detail=button.closest('.case').querySelector('.case-detail');detail.querySelector('h4').textContent=perfxContent[index][0];detail.querySelector('p').textContent=perfxContent[index][1];detail.querySelector('img').src=perfxContent[index][2]}));
-document.querySelectorAll('[data-creative]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-creative]').forEach(b=>b.classList.remove('active'));button.classList.add('active');button.closest('.creative-card').querySelector('h3').textContent=button.dataset.creative}));
-document.getElementById('year').textContent=new Date().getFullYear();
+const viewButtons=[...document.querySelectorAll('[data-view]')];
+const views=[...document.querySelectorAll('[data-view-panel]')];
+
+function showView(name,scroll=true){
+  viewButtons.forEach(button=>button.classList.toggle('active',button.dataset.view===name));
+  views.forEach(view=>{
+    const visible=view.dataset.viewPanel===name;
+    view.classList.toggle('active',visible);
+    view.hidden=!visible;
+  });
+  if(scroll) document.getElementById('content').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+viewButtons.forEach(button=>button.addEventListener('click',()=>showView(button.dataset.view)));
+
+const tabs=[...document.querySelectorAll('[data-tab]')];
+tabs.forEach(tab=>tab.addEventListener('click',()=>{
+  tabs.forEach(item=>{const active=item===tab;item.classList.toggle('active',active);item.setAttribute('aria-selected',String(active));});
+  document.querySelectorAll('[data-work-panel]').forEach(panel=>{
+    const active=panel.dataset.workPanel===tab.dataset.tab;
+    panel.classList.toggle('active',active);
+    panel.hidden=!active;
+  });
+}));
+
+document.querySelectorAll('[data-case]').forEach(card=>{
+  const key=card.dataset.case;
+  const image=card.querySelector('.case-image img');
+  card.querySelectorAll('[data-state]').forEach(button=>button.addEventListener('click',()=>{
+    card.querySelectorAll('[data-state]').forEach(item=>item.classList.toggle('active',item===button));
+    image.src=`states-${key}-${button.dataset.state}.png`;
+  }));
+});
+
+const creativeImage=document.querySelector('.creative-image img');
+document.querySelectorAll('[data-creative-state]').forEach(button=>button.addEventListener('click',()=>{
+  document.querySelectorAll('[data-creative-state]').forEach(item=>item.classList.toggle('active',item===button));
+  creativeImage.src=`states-creative-${button.dataset.creativeState}.png`;
+}));
+
+const initial=location.hash.replace('#','');
+if(['projects','story','contact'].includes(initial)) showView(initial,false);

@@ -11,8 +11,11 @@
 .hero-visual:after{content:"";position:absolute;left:0;top:550px;width:150px;height:92px;background:#000}
 .tabs{width:600px}
 .tab{width:300px;white-space:nowrap}
+.case-image,.creative-image{align-self:stretch;overflow:hidden}
+.case-image img,.creative-image img{width:100%;height:auto;min-height:0;object-fit:contain;object-position:top center}
 
 @media(max-width:760px){
   .tabs{width:100%}
   .tab{width:50%;font-size:12px;white-space:nowrap}
+  .case-image img,.creative-image img{height:auto;min-height:0}
 }

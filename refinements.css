@@ -26,3 +26,12 @@
   .case-card,.creative-card{grid-template-columns:390px 1fr;height:auto;min-height:762px}
   .case-image img,.creative-image img{height:auto;min-height:100%;object-fit:contain}
 }
+
+/* Figma iletişim ikonları: 32px hit area, 24px gap */
+.socials{gap:24px;align-items:flex-start}
+.socials a{display:flex;align-items:center;justify-content:center;width:32px;height:32px;padding:4px;border-radius:6px;background:transparent;box-shadow:none}
+.socials a img{display:block;object-fit:contain}
+.socials a:nth-child(1) img{width:12px;height:20px}
+.socials a:nth-child(2) img,.socials a:nth-child(3) img{width:24px;height:24px}
+.socials a:nth-child(4) img,.socials a:nth-child(5) img{width:18px;height:18px}
+.socials a:first-child,.socials a:hover,.socials a:focus-visible{background:rgba(213,246,12,.5);border:.5px solid #d5f60c;box-shadow:0 1px 10.1px rgba(213,246,12,.43)}

@@ -28,14 +28,14 @@ document.querySelectorAll('[data-case]').forEach(card=>{
   const image=card.querySelector('.case-image img');
   card.querySelectorAll('[data-state]').forEach(button=>button.addEventListener('click',()=>{
     card.querySelectorAll('[data-state]').forEach(item=>item.classList.toggle('active',item===button));
-    image.src=`states-${key}-${button.dataset.state}.png?v=4`;
+    image.src=`states-${key}-${button.dataset.state}-2x.png?v=11`;
   }));
 });
 
 const creativeImage=document.querySelector('.creative-image img');
 document.querySelectorAll('[data-creative-state]').forEach(button=>button.addEventListener('click',()=>{
   document.querySelectorAll('[data-creative-state]').forEach(item=>item.classList.toggle('active',item===button));
-  creativeImage.src=`states-creative-${button.dataset.creativeState}.png?v=10`;
+  creativeImage.src=`states-creative-${button.dataset.creativeState}-2x.png?v=11`;
 }));
 
 const initial=location.hash.replace('#','');

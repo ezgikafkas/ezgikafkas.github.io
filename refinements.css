@@ -5,3 +5,7 @@
     width: 660px;
   }
 }
+/* Güncel Figma banner görseli */
+.hero-visual{left:auto;right:0;top:0;width:680px;height:769px}
+.hero-visual img{display:block;width:100%;height:100%;object-fit:contain;object-position:right center}
+.hero-visual:after{content:"";position:absolute;left:0;bottom:0;width:110px;height:105px;background:#000}

@@ -35,7 +35,7 @@ document.querySelectorAll('[data-case]').forEach(card=>{
 const creativeImage=document.querySelector('.creative-image img');
 document.querySelectorAll('[data-creative-state]').forEach(button=>button.addEventListener('click',()=>{
   document.querySelectorAll('[data-creative-state]').forEach(item=>item.classList.toggle('active',item===button));
-  creativeImage.src=`states-creative-${button.dataset.creativeState}.png?v=5`;
+  creativeImage.src=`states-creative-${button.dataset.creativeState}.png?v=10`;
 }));
 
 const initial=location.hash.replace('#','');
